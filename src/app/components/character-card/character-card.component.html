@@ -1,0 +1,15 @@
+<div class="characterCard">
+  <div class="row">
+    <div class="col-4">
+      <img class="img-fluid imageCharacterCard" [src]="character.image" [alt]="character.name">
+    </div>
+    <div class="col-8">
+      <div class="bodyCharacterCard">
+        <h4 class="">{{ character.name }}</h4>
+        <p class=""> {{ character.species }} </p>
+        <p class=""><small class="text-muted">{{ character.gender }}</small></p>
+        <!-- <a [routerLink]="['/character',i]" class="btn btn-outline-primary">Ver más link...</a> -->
+      </div>
+    </div>
+  </div>
+</div>
