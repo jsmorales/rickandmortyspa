@@ -18,8 +18,8 @@ export class CharacterCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('log from character card.')
-    console.log(this.character)
+    /*console.log('log from character card.')
+    console.log(this.character)*/
   }
 
   /*verHeroe() {
