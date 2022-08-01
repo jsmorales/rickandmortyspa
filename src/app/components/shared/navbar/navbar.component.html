@@ -17,9 +17,7 @@
         <a class="nav-link" [routerLink]="['about']">About</a>
       </li>-->
     </ul>
-
     <input class="charInput" type="text" (keyup)="executeSearch(characterNameInput.value)" #characterNameInput>
     <button (click)="executeSearch(characterNameInput.value)" class="charButton" type="button">Search</button>
-
   </div>
 </nav>
