@@ -1,7 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {RickandmortyapiService} from "../../../servicios/rickandmortyapi.service";
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html'
