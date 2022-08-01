@@ -18,12 +18,16 @@ export class RickandmortyapiService {
   }
 
   getCharacters(reset? : boolean) {
+    this.next = reset ? '' : this.next;
+    console.log('loading value in getCharacters:')
+    console.log(this.loading)
+    console.log('Next value in getCharacters:')
+    console.log(this.next)
     if(this.loading || this.next === null){
       return;
     }
     this.loading = true;
     const url = `${this.baseUrl}/character`;
-    this.next = reset ? '' : this.next;
     return this.http.get(this.next === '' ? url : this.next).pipe(
       // this happens when this observable emits some result
       // in this case is only used to increment in 1 the page
@@ -31,23 +35,29 @@ export class RickandmortyapiService {
       tap( (data: any) => {
         this.loading = false;
         this.next = data.info.next;
-      })
+      }),
     );
   }
 
   filterCharactersByName(name: string) {
+    console.log('loading value in filterCharactersByName:')
+    console.log(this.loading)
     this.next = '';
     if(this.loading){
       return;
     }
     this.loading = true;
     const url = `${this.baseUrl}/character/?name=${name}`;
+    console.log('log url for get in filterCharactersByName:')
+    console.log(this.next === '' ? url : this.next)
     return this.http.get(this.next === '' ? url : this.next).pipe(
       catchError(err => this.handleError(err)),
       tap( (data: any) => {
         this.loading = false;
         this.next = data.info.next;
-      })
+        console.log('loading value in filterCharactersByName tap:')
+        console.log(this.loading)
+      }),
     );
   }
 
@@ -56,6 +66,8 @@ export class RickandmortyapiService {
     if(error){
       alert(error.error.error)
     }
+    console.log('loading value in handleError:')
+    console.log(this.loading)
     return throwError(error);
   }
 }

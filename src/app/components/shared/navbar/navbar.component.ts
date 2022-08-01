@@ -15,7 +15,8 @@ export class NavbarComponent implements OnInit {
   }
 
   executeSearch( characterNameValue:string ){
-    if(characterNameValue.length >= 3){
+    this._rickApiService.loading = false;
+    if(characterNameValue.length >= 3) {
       console.log(characterNameValue);
       this._rickApiService.filterCharactersByName(characterNameValue).subscribe((data: any) => {
         console.log(data);
