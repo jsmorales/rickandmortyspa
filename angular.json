@@ -86,10 +86,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ],
-            "codeCoverageExclude": [
-              "src/app/components/rick-search/rick-search.component.ts",
-              "src/app/servicios/rickandmortyapi.service.ts"
             ]
           }
         },
